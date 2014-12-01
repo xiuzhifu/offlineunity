@@ -1,11 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src\MainScene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\src\network\SocketMgr.cs">
     <Files>
-      <File FileName="Assets\src\MainScene.cs" Line="7" Column="24" />
-      <File FileName="Assets\src\network\SocketMgr.cs" Line="115" Column="1" />
-      <File FileName="Assets\src\network\SprotoPack.cs" Line="200" Column="1" />
-      <File FileName="Assets\src\network\SprotoProtocolBase.cs" Line="12" Column="1" />
+      <File FileName="Assets\src\MainScene.cs" Line="26" Column="2" />
+      <File FileName="Assets\src\network\SocketMgr.cs" Line="84" Column="39" />
+      <File FileName="Assets\src\network\SprotoRpc.cs" Line="72" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

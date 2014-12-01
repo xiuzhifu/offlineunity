@@ -76,12 +76,12 @@ public class SocketMgr
 
     public bool send(byte[] buf){
         if (!isconnect) return false;
-		int blen = (UInt16)buf.Length;
+		ushort blen = (ushort)buf.Length;
         if (blen > HALFMAXBUFFER) {
             return false;
         }
-		sendbuf [0] = (byte)(int)(blen >> 4);
-        sendbuf[1] = (byte)(blen & 0x000000ff);
+		sendbuf [0] = (byte)(blen >> 8);
+		sendbuf [1] = (byte)(blen & 0x00ff);
 		sendlen = 2;
         Array.Copy(buf, 0, sendbuf, sendlen, buf.Length);
         sendlen += buf.Length;
