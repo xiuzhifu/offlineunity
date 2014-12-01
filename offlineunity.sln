@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{27A21354-321D-FBC2-8F0C-B17B995BB9CA}") = "offline", "Assembly-CSharp-vs.csproj", "{65DD8A39-283C-5D31-ED77-D693E9DB0445}"
+Project("{126066B4-75B4-2550-4FC3-7E44C413E10C}") = "offlineunity", "Assembly-CSharp.csproj", "{380FF0BD-52C2-94DB-2F20-8221D475BDA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{65DD8A39-283C-5D31-ED77-D693E9DB0445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{65DD8A39-283C-5D31-ED77-D693E9DB0445}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{65DD8A39-283C-5D31-ED77-D693E9DB0445}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{65DD8A39-283C-5D31-ED77-D693E9DB0445}.Release|Any CPU.Build.0 = Release|Any CPU
+		{380FF0BD-52C2-94DB-2F20-8221D475BDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380FF0BD-52C2-94DB-2F20-8221D475BDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380FF0BD-52C2-94DB-2F20-8221D475BDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380FF0BD-52C2-94DB-2F20-8221D475BDA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																					GlobalSection(MonoDevelopProperties) = preSolution
+								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

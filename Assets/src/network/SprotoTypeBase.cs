@@ -15,9 +15,9 @@ namespace Sproto {
 			this.deserialize = new SprotoTypeDeserialize ();
 		}
 
-		public long init (byte[] buffer){
+		public int init (byte[] buffer, int offset=0){
 			this.clear ();
-			this.deserialize.init (buffer);
+			this.deserialize.init (buffer, offset);
 			this.decode ();
 
 			return this.deserialize.size ();
@@ -36,16 +36,26 @@ namespace Sproto {
 			this.serialize = new SprotoTypeSerialize (max_field_count);
 			this.deserialize = new SprotoTypeDeserialize (buffer);
 		}
+			
+		public abstract int encode (SprotoStream stream);
 
-		public abstract byte[] encode ();
+		public  byte[] encode () {
+			SprotoStream stream = new SprotoStream ();
+			this.encode (stream);
+			int len = stream.Position;
+
+			byte[] buffer = new byte[len];
+			stream.Seek (0, SeekOrigin.Begin);
+			stream.Read (buffer, 0, len);
+
+			return buffer;
+		}
+
 		protected abstract void decode ();
 
 		public void clear(){
 			// clear has slot
 			this.has_field.clear_field ();
-
-			// clear serialize
-			this.serialize.clear ();
 
 			// clear deserialize
 			this.deserialize.clear ();

@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{65DD8A39-283C-5D31-ED77-D693E9DB0445}</ProjectGuid>
+	<ProjectGuid>{380FF0BD-52C2-94DB-2F20-8221D475BDA3}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_5_0_0;UNITY_5_0;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_OBSOLETE_API_UPDATING;ENABLE_SPRITES;ENABLE_SUBSTANCE;ENABLE_GENERICS;ENABLE_MULTIPLE_DISPLAYS;ENABLE_WWW;ENABLE_PHYSICS_PHYSX3;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;ENABLE_CACHING;ENABLE_FRAME_DEBUGGER;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_TERRAIN;INCLUDE_WP8SUPPORT;INCLUDE_IL2CPP;ENABLE_IMAGEEFFECTS;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;PLATFORM_SUPPORTS_MONO;INCLUDE_DYNAMIC_GI;ENABLE_PLUGIN_INSPECTOR;RENDER_SOFTWARE_CURSOR;ENABLE_PHYSICS;ENABLE_NEW_HIERARCHY;UNITY_ANDROID_API;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_HOME_SCREEN;ENABLE_EGL;INCLUDE_GI;ENABLE_AUDIO;ENABLE_MONO;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_4_6_0;UNITY_4_6;UNITY_IPHONE;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_UNITYEVENTS;ENABLE_NEW_HIERARCHY ;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_TERRAIN;ENABLE_SUBSTANCE;ENABLE_GENERICS;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;UNITY_IPHONE_API;ENABLE_4_6_FEATURES;INCLUDE_WP_BLUE_SUPPORT;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_GAMECENTER;UNITY_IOS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -39,16 +39,22 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files/Unity 5.0.0b1/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files/Unity 5.0.0b1/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\src\Logger.cs" />
+     <Compile Include="Assets\src\MainScene.cs" />
+     <Compile Include="Assets\src\network\Package.cs" />
+     <Compile Include="Assets\src\network\ProtocolFunctionDictionary.cs" />
      <Compile Include="Assets\src\network\SocketMgr.cs" />
      <Compile Include="Assets\src\network\SprotoPack.cs" />
      <Compile Include="Assets\src\network\SprotoProtocolBase.cs" />
+     <Compile Include="Assets\src\network\SprotoRpc.cs" />
+     <Compile Include="Assets\src\network\SprotoStream.cs" />
      <Compile Include="Assets\src\network\SprotoTypeBase.cs" />
      <Compile Include="Assets\src\network\SprotoTypeDeserialize.cs" />
      <Compile Include="Assets\src\network\SprotoTypeFieldOP.cs" />
@@ -66,7 +72,7 @@
      <None Include="Assets\res\ui\bmtfont.proj\yellow.fnt" />
      <None Include="Assets\res\ui\bmtfont.proj\battleyellow.fnt" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity 5.0.0b1/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
