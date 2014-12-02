@@ -74,24 +74,26 @@ public class SocketMgr
         socket = null;
     }
 
-    public bool send(byte[] buf){
-        if (!isconnect) return false;
+	public bool send(byte[] buf){
+		if (!isconnect) return false;
 		ushort blen = (ushort)buf.Length;
-        if (blen > HALFMAXBUFFER) {
-            return false;
-        }
+		if (blen > HALFMAXBUFFER) {
+			return false;
+		}
 		sendbuf [0] = (byte)(blen >> 8);
 		sendbuf [1] = (byte)(blen & 0x00ff);
 		sendlen = 2;
-        Array.Copy(buf, 0, sendbuf, sendlen, buf.Length);
-        sendlen += buf.Length;
-        int len = socket.Send(sendbuf, sendlen, SocketFlags.None);
-        if (len != sendlen){             
-            Array.Copy(sendbuf, sendlen, sendbuf, 0, sendlen - len);
-            sendlen -= len;
-        }
-        return true;
-    }
+		Array.Copy(buf, 0, sendbuf, sendlen, buf.Length);
+		sendlen += buf.Length;
+		int len = socket.Send(sendbuf, sendlen, SocketFlags.None);
+		if (len != sendlen){             
+			Array.Copy(sendbuf, sendlen, sendbuf, 0, sendlen - len);
+			sendlen -= len;
+		}
+		return true;
+	
+	}
+
     public void recv(){
         socket.BeginReceive(recvbuf,recvlen, HALFMAXBUFFER, SocketFlags.None, new AsyncCallback(endRecv), null);
     }
@@ -101,11 +103,13 @@ public class SocketMgr
         int len = socket.EndReceive(async);
         recvlen += len;
         if (recvlen >= 2) {
-			int l = (recvbuf[0] << 4) & (recvbuf[1]);
+			ushort l = (ushort)(recvbuf[0] << 8 | recvbuf[1]);
 			if (recvlen >= l + 2){
                 byte[] temp = new byte[l];
                 Array.Copy(recvbuf, 2, temp, 0, l);
-                recvlist.Enqueue(temp);           
+                recvlist.Enqueue(temp);
+				if (recvlen > l + 2)
+					Array.Copy(recvbuf, recvlen, recvbuf, 0, recvlen - l - 2); 
                 recvlen -= l + 2;
             }
         } 

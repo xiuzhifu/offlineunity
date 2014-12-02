@@ -133,10 +133,10 @@ namespace protoType{
 
 
 	public class createaccount : SprotoTypeBase {
-		private static int max_field_count = 3;
+		private static int max_field_count = 2;
 		
 		public class request : SprotoTypeBase {
-			private static int max_field_count = 3;
+			private static int max_field_count = 2;
 			
 			
 			private string _username; // tag 0
@@ -285,10 +285,10 @@ namespace protoType{
 
 
 	public class createplayer : SprotoTypeBase {
-		private static int max_field_count = 3;
+		private static int max_field_count = 2;
 		
 		public class request : SprotoTypeBase {
-			private static int max_field_count = 3;
+			private static int max_field_count = 2;
 			
 			
 			private string _username; // tag 0
@@ -436,142 +436,6 @@ namespace protoType{
 	}
 
 
-	public class drop : SprotoTypeBase {
-		private static int max_field_count = 5;
-		
-		public class request : SprotoTypeBase {
-			private static int max_field_count = 5;
-			
-			
-			private Int64 _exp; // tag 0
-			public Int64 exp {
-				get { return _exp; }
-				set { base.has_field.set_field (0, true); _exp = value; }
-			}
-
-			private Int64 _gold; // tag 1
-			public Int64 gold {
-				get { return _gold; }
-				set { base.has_field.set_field (1, true); _gold = value; }
-			}
-
-			private List<titem> _items; // tag 2
-			public List<titem> items {
-				get { return _items; }
-				set { base.has_field.set_field (2, true); _items = value; }
-			}
-
-			public request () : base(max_field_count) {}
-
-			public request (byte[] buffer) : base(max_field_count, buffer) {
-				this.decode ();
-			}
-
-			protected override void decode () {
-				int tag = -1;
-				while (-1 != (tag = base.deserialize.read_tag ())) {
-					switch (tag) {
-					case 0:
-						this.exp = base.deserialize.read_integer ();
-						break;
-					case 1:
-						this.gold = base.deserialize.read_integer ();
-						break;
-					case 2:
-						this.items = base.deserialize.read_obj_list<titem> ();
-						break;
-					default:
-						base.deserialize.read_unknow_data ();
-						break;
-					}
-				}
-			}
-
-			public override int encode (SprotoStream stream) {
-				base.serialize.open (stream);
-
-				if (base.has_field.has_field (0)) {
-					base.serialize.write_integer (this.exp, 0);
-				}
-
-				if (base.has_field.has_field (1)) {
-					base.serialize.write_integer (this.gold, 1);
-				}
-
-				if (base.has_field.has_field (2)) {
-					base.serialize.write_obj (this.items, 2);
-				}
-
-				return base.serialize.close ();
-			}
-		}
-
-
-		
-		private Int64 _exp; // tag 0
-		public Int64 exp {
-			get { return _exp; }
-			set { base.has_field.set_field (0, true); _exp = value; }
-		}
-
-		private Int64 _gold; // tag 1
-		public Int64 gold {
-			get { return _gold; }
-			set { base.has_field.set_field (1, true); _gold = value; }
-		}
-
-		private List<titem> _items; // tag 2
-		public List<titem> items {
-			get { return _items; }
-			set { base.has_field.set_field (2, true); _items = value; }
-		}
-
-		public drop () : base(max_field_count) {}
-
-		public drop (byte[] buffer) : base(max_field_count, buffer) {
-			this.decode ();
-		}
-
-		protected override void decode () {
-			int tag = -1;
-			while (-1 != (tag = base.deserialize.read_tag ())) {
-				switch (tag) {
-				case 0:
-					this.exp = base.deserialize.read_integer ();
-					break;
-				case 1:
-					this.gold = base.deserialize.read_integer ();
-					break;
-				case 2:
-					this.items = base.deserialize.read_obj_list<titem> ();
-					break;
-				default:
-					base.deserialize.read_unknow_data ();
-					break;
-				}
-			}
-		}
-
-		public override int encode (SprotoStream stream) {
-			base.serialize.open (stream);
-
-			if (base.has_field.has_field (0)) {
-				base.serialize.write_integer (this.exp, 0);
-			}
-
-			if (base.has_field.has_field (1)) {
-				base.serialize.write_integer (this.gold, 1);
-			}
-
-			if (base.has_field.has_field (2)) {
-				base.serialize.write_obj (this.items, 2);
-			}
-
-			return base.serialize.close ();
-		}
-	}
-
-
 	public class getfightround : SprotoTypeBase {
 		private static int max_field_count = 1;
 		
@@ -618,7 +482,7 @@ namespace protoType{
 
 
 		public class response : SprotoTypeBase {
-			private static int max_field_count = 3;
+			private static int max_field_count = 2;
 			
 			
 			private List<tmonster> _monster; // tag 0
@@ -744,7 +608,7 @@ namespace protoType{
 
 
 		public class response : SprotoTypeBase {
-			private static int max_field_count = 3;
+			private static int max_field_count = 2;
 			
 			
 			private bool _ok; // tag 0
@@ -825,10 +689,10 @@ namespace protoType{
 
 
 	public class login : SprotoTypeBase {
-		private static int max_field_count = 3;
+		private static int max_field_count = 2;
 		
 		public class request : SprotoTypeBase {
-			private static int max_field_count = 3;
+			private static int max_field_count = 2;
 			
 			
 			private string _username; // tag 0
@@ -977,7 +841,7 @@ namespace protoType{
 
 
 	public class package : SprotoTypeBase {
-		private static int max_field_count = 3;
+		private static int max_field_count = 2;
 		
 		
 		private Int64 _type; // tag 0
@@ -1031,92 +895,8 @@ namespace protoType{
 	}
 
 
-	public class sysmessage : SprotoTypeBase {
-		private static int max_field_count = 1;
-		
-		public class request : SprotoTypeBase {
-			private static int max_field_count = 1;
-			
-			
-			private string _msg; // tag 0
-			public string msg {
-				get { return _msg; }
-				set { base.has_field.set_field (0, true); _msg = value; }
-			}
-
-			public request () : base(max_field_count) {}
-
-			public request (byte[] buffer) : base(max_field_count, buffer) {
-				this.decode ();
-			}
-
-			protected override void decode () {
-				int tag = -1;
-				while (-1 != (tag = base.deserialize.read_tag ())) {
-					switch (tag) {
-					case 0:
-						this.msg = base.deserialize.read_string ();
-						break;
-					default:
-						base.deserialize.read_unknow_data ();
-						break;
-					}
-				}
-			}
-
-			public override int encode (SprotoStream stream) {
-				base.serialize.open (stream);
-
-				if (base.has_field.has_field (0)) {
-					base.serialize.write_string (this.msg, 0);
-				}
-
-				return base.serialize.close ();
-			}
-		}
-
-
-		
-		private string _msg; // tag 0
-		public string msg {
-			get { return _msg; }
-			set { base.has_field.set_field (0, true); _msg = value; }
-		}
-
-		public sysmessage () : base(max_field_count) {}
-
-		public sysmessage (byte[] buffer) : base(max_field_count, buffer) {
-			this.decode ();
-		}
-
-		protected override void decode () {
-			int tag = -1;
-			while (-1 != (tag = base.deserialize.read_tag ())) {
-				switch (tag) {
-				case 0:
-					this.msg = base.deserialize.read_string ();
-					break;
-				default:
-					base.deserialize.read_unknow_data ();
-					break;
-				}
-			}
-		}
-
-		public override int encode (SprotoStream stream) {
-			base.serialize.open (stream);
-
-			if (base.has_field.has_field (0)) {
-				base.serialize.write_string (this.msg, 0);
-			}
-
-			return base.serialize.close ();
-		}
-	}
-
-
 	public class tdamageflow : SprotoTypeBase {
-		private static int max_field_count = 7;
+		private static int max_field_count = 4;
 		
 		
 		private Int64 _type; // tag 0
@@ -1196,76 +976,8 @@ namespace protoType{
 	}
 
 
-	public class titem : SprotoTypeBase {
-		private static int max_field_count = 5;
-		
-		
-		private Int64 _id; // tag 0
-		public Int64 id {
-			get { return _id; }
-			set { base.has_field.set_field (0, true); _id = value; }
-		}
-
-		private string _name; // tag 1
-		public string name {
-			get { return _name; }
-			set { base.has_field.set_field (1, true); _name = value; }
-		}
-
-		private Int64 _count; // tag 2
-		public Int64 count {
-			get { return _count; }
-			set { base.has_field.set_field (2, true); _count = value; }
-		}
-
-		public titem () : base(max_field_count) {}
-
-		public titem (byte[] buffer) : base(max_field_count, buffer) {
-			this.decode ();
-		}
-
-		protected override void decode () {
-			int tag = -1;
-			while (-1 != (tag = base.deserialize.read_tag ())) {
-				switch (tag) {
-				case 0:
-					this.id = base.deserialize.read_integer ();
-					break;
-				case 1:
-					this.name = base.deserialize.read_string ();
-					break;
-				case 2:
-					this.count = base.deserialize.read_integer ();
-					break;
-				default:
-					base.deserialize.read_unknow_data ();
-					break;
-				}
-			}
-		}
-
-		public override int encode (SprotoStream stream) {
-			base.serialize.open (stream);
-
-			if (base.has_field.has_field (0)) {
-				base.serialize.write_integer (this.id, 0);
-			}
-
-			if (base.has_field.has_field (1)) {
-				base.serialize.write_string (this.name, 1);
-			}
-
-			if (base.has_field.has_field (2)) {
-				base.serialize.write_integer (this.count, 2);
-			}
-
-			return base.serialize.close ();
-		}
-	}
-
-
 	public class tmonster : SprotoTypeBase {
-		private static int max_field_count = 9;
+		private static int max_field_count = 5;
 		
 		
 		private Int64 _id; // tag 0
@@ -1359,7 +1071,7 @@ namespace protoType{
 
 
 	public class tplayer : SprotoTypeBase {
-		private static int max_field_count = 35;
+		private static int max_field_count = 18;
 		
 		
 		private Int64 _id; // tag 0
@@ -1700,29 +1412,6 @@ namespace protoProtocol{
 		}
 	}
 
-	public class drop : SprotoProtocolBase {
-		public const int tag = 2;
-		public override int GetTag() {
-			return tag;
-		}
-
-		public protoType.drop.request request;
-
-
-		static drop () {
-			ProtocolFunctionDictionary.SetRequest<protoType.drop.request> (tag);
-		}
-
-
-		public override SprotoTypeBase GetRequest() {
-			return this.request;
-		}
-
-		public override SprotoTypeBase GetResponse() {
-			return null;
-		}
-	}
-
 	public class getfightround : SprotoProtocolBase {
 		public const int tag = 6;
 		public override int GetTag() {
@@ -1795,29 +1484,6 @@ namespace protoProtocol{
 
 		public override SprotoTypeBase GetResponse() {
 			return this.response;
-		}
-	}
-
-	public class sysmessage : SprotoProtocolBase {
-		public const int tag = 1;
-		public override int GetTag() {
-			return tag;
-		}
-
-		public protoType.sysmessage.request request;
-
-
-		static sysmessage () {
-			ProtocolFunctionDictionary.SetRequest<protoType.sysmessage.request> (tag);
-		}
-
-
-		public override SprotoTypeBase GetRequest() {
-			return this.request;
-		}
-
-		public override SprotoTypeBase GetResponse() {
-			return null;
 		}
 	}
 

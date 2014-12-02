@@ -50,6 +50,7 @@
      <Compile Include="Assets\src\MainScene.cs" />
      <Compile Include="Assets\src\network\Package.cs" />
      <Compile Include="Assets\src\network\ProtocolFunctionDictionary.cs" />
+     <Compile Include="Assets\src\network\RPC.cs" />
      <Compile Include="Assets\src\network\SocketMgr.cs" />
      <Compile Include="Assets\src\network\SprotoPack.cs" />
      <Compile Include="Assets\src\network\SprotoProtocolBase.cs" />
@@ -62,6 +63,8 @@
      <Compile Include="Assets\src\network\SprotoTypeSerialize.cs" />
      <Compile Include="Assets\src\network\SprotoTypeSize.cs" />
      <Compile Include="Assets\src\network\proto.cs" />
+     <Compile Include="Assets\src\network\rpc\login.cs" />
+     <Compile Include="Assets\src\network\serverproto.cs" />
      <Compile Include="Assets\src\uiEeventHandler.cs" />
      <None Include="Assets\res\ui\bmtfont.proj\time.fnt" />
      <None Include="Assets\res\ui\bmtfont.proj\battlegreen.fnt" />

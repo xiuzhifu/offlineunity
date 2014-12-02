@@ -13,13 +13,17 @@ namespace Sproto
 			get {return this.pos;}
 		}
 
+		public byte[] Buffer {
+			get {return this.buffer;}
+		}
+
 		public SprotoStream () {
 			this.size = 128;
 			this.pos = 0;
 			this.buffer = new byte[this.size];
 		}
 
-		private void _expand(int sz) {
+		private void _expand(int sz=0) {
 			if(this.size - this.pos  < sz) {
 				long bak_sz = this.size;
 				while (this.size - this.pos < sz) {
@@ -96,11 +100,9 @@ namespace Sproto
 
 			set {
 				if (i < 0 || i > this.pos) {
-
-
-
 					throw new Exception ("invalid idx:" + i + "@set");
 				}
+				this._expand ();
 				this.buffer [i] = value;
 			}
 		}
