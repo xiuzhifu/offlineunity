@@ -48,7 +48,14 @@ namespace Sproto
 				int session = (int)package.session;
 				int tag;
 				if (!this.sessionDictionary.TryGetValue (session, out tag)) {
-					throw new Exception ("Unknown session: " + session);
+					tag = (int)package.type;
+					ResponseInfo info1;
+					info1.Obj = ProtocolFunctionDictionary.GenRequest (tag, buffer, offset);
+					info1.Session = (int)package.session;
+					info1.Tag = tag;
+					
+					return info1;
+					//throw new Exception ("Unknown session: " + session);
 				} else {
 					this.sessionDictionary.Remove (session);
 				}

@@ -5,7 +5,7 @@ using System;
 using Sproto;
 using System.Collections.Generic;
 
-namespace serverprotoType{ 
+namespace protoserverType{ 
 	public class drop : SprotoTypeBase {
 		private static int max_field_count = 3;
 		
@@ -352,18 +352,18 @@ namespace serverprotoType{
 }
 
 
-namespace serverprotoProtocol{ 
+namespace protoserverProtocol{ 
 	public class drop : SprotoProtocolBase {
-		public const int tag = 2;
+		public const int tag = 8;
 		public override int GetTag() {
 			return tag;
 		}
 
-		public serverprotoType.drop.request request;
+		public protoserverType.drop.request request;
 
 
 		static drop () {
-			ProtocolFunctionDictionary.SetRequest<serverprotoType.drop.request> (tag);
+			ProtocolFunctionDictionary.SetRequest<protoserverType.drop.request> (tag);
 		}
 
 
@@ -377,16 +377,16 @@ namespace serverprotoProtocol{
 	}
 
 	public class sysmessage : SprotoProtocolBase {
-		public const int tag = 1;
+		public const int tag = 7;
 		public override int GetTag() {
 			return tag;
 		}
 
-		public serverprotoType.sysmessage.request request;
+		public protoserverType.sysmessage.request request;
 
 
 		static sysmessage () {
-			ProtocolFunctionDictionary.SetRequest<serverprotoType.sysmessage.request> (tag);
+			ProtocolFunctionDictionary.SetRequest<protoserverType.sysmessage.request> (tag);
 		}
 
 
